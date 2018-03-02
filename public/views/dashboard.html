@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Midllename</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>EmployeeId</th>
+        <th>Roles</th>
+        <th>Description</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "user in users">
+        <td>{{user.firstname}}</td>
+        <td>{{user.middlename}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.empid}}</td>
+        <td>{{user.mobilenumber}}</td>
+        <td>{{user.description}}</td>
+        <td><button type="button" class="btn btn-success" ng-click="showUser(user)">Edit</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,34 @@
+<div class="container ">
+  <form class="center-block col-md-6">
+    <div class="form-group">
+      <label for="email">First Name:</label>
+      <input type="text" class="form-control" id="fname" ng-model="obj.firstname">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Middle Name:</label>
+      <input type="text" class="form-control" id="mname" ng-model="obj.middlename ">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Last Name:</label>
+      <input type="text" class="form-control" id="lname" ng-model="obj.lastname">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Email:</label>
+      <input type="email" class="form-control" id="email" ng-model="obj.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Mobile Number:</label>
+      <input type="number" class="form-control" id="mobile" ng-model="obj.mobile">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Employee Id:</label>
+      <input type="text" class="form-control" id="empid" ng-model="obj.empid">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Roles:</label>
+      <input type="text" class="form-control" id="roles" ng-model="obj.roles">
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-click="saveFormData(obj)">Submit</button>
+  </form>
+</div>
