@@ -1,14 +1,23 @@
-const mongoose = require('mongoose');
-var formSchema = mongoose.Schema({
-  firstname : {type:String},
-  middlename : {type:String},
-  lastname : {type:String},
-  mobilenumber : {type:Number},
-  description :{type:String},
-  empid : {type:String},
-  email : {type:String},
-  roles : {type:String}
 
-})
 
-module.exports = mongoose.model('formcollection',formSchema)
+
+ module.exports.saveFormData = function(formData,db,cb){
+   db.collection('users').insertOne(formData,function(err,saveinfo){
+     if(err){
+       return cb(err)
+     }
+     else{
+       return cb(saveinfo)
+     }
+   })
+
+ }
+
+ module.exports.fetchFormData = function(db,cb){
+   db.collection("users").find({}).toArray(function(err, result) {
+     if (err) throw err;
+     console.log(result);
+     return cb(result)
+     db.close();
+   });
+ }

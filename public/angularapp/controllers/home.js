@@ -2,7 +2,7 @@
 app.controller('homeController',function($scope,$http,$state,$stateParams){
   $scope.obj = {};
   $scope.saveFormData = function(obj){
-    $http({method: 'POST', url: 'users/saveFormData', data:obj})
+    $http({method: 'POST', url: '/saveFormData', data:obj})
     .then(function successCallback(data) {
       console.log(data);
       if(data.data.result=="save success"){
@@ -18,7 +18,7 @@ app.controller('homeController',function($scope,$http,$state,$stateParams){
 
 app.controller('dashboardController',function($scope,$http){
   $scope.users={};
-  $http({method: 'GET', url: 'users/getUserInfo'})
+  $http({method: 'GET', url: '/getUserInfo'})
   .then(function successCallback(data) {
     console.log(data);
     $scope.users = data.data.usersdata;
