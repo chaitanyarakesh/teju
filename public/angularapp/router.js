@@ -7,7 +7,8 @@ var app = angular.module('testApp',['ui.router','angular-carousel-3d']).config(
         .state("home", {
           url: "/",
           templateUrl: "views/home.html",
-          controller:'homeController'
+          controller:'homeController',
+		  params : {userInfo:null}
         })
         .state("dashboard", {
           url: "/dashboard",

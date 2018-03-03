@@ -1,6 +1,7 @@
 //var app = angular.module("testApp",[]);
 app.controller('homeController',function($scope,$http,$state,$stateParams){
   $scope.obj = {};
+  $scope.obj = JSON.parse($stateParams.userInfo);
   $scope.saveFormData = function(obj){
     $http({method: 'POST', url: '/saveFormData', data:obj})
     .then(function successCallback(data) {
@@ -16,7 +17,7 @@ app.controller('homeController',function($scope,$http,$state,$stateParams){
   }
 })
 
-app.controller('dashboardController',function($scope,$http){
+app.controller('dashboardController',function($scope,$http,$state,$stateParams){
 	getUserList();
 	function getUserList(){
   $scope.users={};
@@ -32,6 +33,7 @@ app.controller('dashboardController',function($scope,$http){
 	}
   $scope.showUser = function(user){
     console.log(user);
+	$state.go('home',{userInfo:JSON.stringify(user)});
   }
   
   $scope.deleteUser = function(userId){
