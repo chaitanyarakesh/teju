@@ -1,4 +1,5 @@
 
+var mongodb = require('mongodb');
 
 
  module.exports.saveFormData = function(formData,db,cb){
@@ -22,9 +23,9 @@
    });
  }
 
- module.exports.deleteUserById = function(userId,db,cb{
-	 db.collection('users').deleteOne({_id:userId},function(err,success){
+ module.exports.deleteUserById = function(userId,db,cb){
+	 db.collection('users').deleteOne({_id:new mongodb.ObjectId(userId)},function(err,success){
 		 if(err) throw err;
 		 return cb(success)
 	 })
- })
+ }

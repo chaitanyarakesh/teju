@@ -35,7 +35,8 @@ app.controller('dashboardController',function($scope,$http){
   }
   
   $scope.deleteUser = function(userId){
-	  http({method:'POST',url:'/delteUserById',data:{userId:userId}})
+	  var user ={userId:userId}
+	  $http({method:'POST',url:'/delteUserById',data:user})
 	  .then(function(data){
 		  console.log(data);
 		  getUserList();

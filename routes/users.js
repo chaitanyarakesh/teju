@@ -23,9 +23,10 @@ module.exports = function(app,db){
     })
   });
   
-  app.get('/delteUserById',function(req,res){
-	  console.log(req.body)
-	  User.deleteUserById(req.body.userId,db,function(result){
+  app.post('/delteUserById',function(req,res){
+	  console.log('hi')
+	  console.log(req.body.userId)
+	  User.deleteUserById(req.body.userId,database,function(result){
 		  res.json({result:'deleted success'});
 	  })
   })
