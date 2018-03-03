@@ -17,7 +17,10 @@ app.controller('homeController',function($scope,$http,$state,$stateParams){
 })
 
 app.controller('dashboardController',function($scope,$http){
+	getUserList();
+	function getUserList(){
   $scope.users={};
+  
   $http({method: 'GET', url: '/getUserInfo'})
   .then(function successCallback(data) {
     console.log(data);
@@ -26,8 +29,19 @@ app.controller('dashboardController',function($scope,$http){
   function errorCallback(data) {
 
   });
-
+	}
   $scope.showUser = function(user){
     console.log(user);
+  }
+  
+  $scope.deleteUser = function(userId){
+	  http({method:'POST',url:'/delteUserById',data:{userId:userId}})
+	  .then(function(data){
+		  console.log(data);
+		  getUserList();
+	  })
+	  .catch(function(err){
+		  console.log(err)
+	  })
   }
 })

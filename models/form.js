@@ -18,6 +18,13 @@
      if (err) throw err;
      console.log(result);
      return cb(result)
-     db.close();
+    // db.close();
    });
  }
+
+ module.exports.deleteUserById = function(userId,db,cb{
+	 db.collection('users').deleteOne({_id:userId},function(err,success){
+		 if(err) throw err;
+		 return cb(success)
+	 })
+ })

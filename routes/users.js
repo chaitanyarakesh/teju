@@ -22,4 +22,11 @@ module.exports = function(app,db){
       res.json({result:'fetch success',usersdata:result})
     })
   });
+  
+  app.get('/delteUserById',function(req,res){
+	  console.log(req.body)
+	  User.deleteUserById(req.body.userId,db,function(result){
+		  res.json({result:'deleted success'});
+	  })
+  })
 }
