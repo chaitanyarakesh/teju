@@ -1,31 +1,18 @@
-<html ng-app="testApp">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+{
 
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-  <script src="lib/jquery/dist/jquery.min.js"></script>
-  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- angular dependencies-->
-  <script src="lib/angular/angular.min.js"></script>
-  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="lib/angular-route/angular-route.min.js"></script>
-  <!--Including app routing files-->
-  <!-- <script src="data/empoyee.json" charset="utf-8"></script> -->
-  <!--Including app routing files-->
-  <script src="angularapp/router.js" charset="utf-8"></script>
+        "postgre"    : {
+            "database" : "Rubus_Core_Test",
+            "user"     : "postgres",
+            "password" : "postgres",
+			 "port"    : 5432,
+			 "host"    : "192.168.4.187"
+        },
+        "app"   : {
+            "port"     : 8086
+        },
+		 "cassandra"   : {
+            "contactPoints"     : "192.168.4.187:9042",
+			"keyspace"          : "elogsheet"
+        }
 
-  <!-- carosul -->
-  <link href="lib/angular-carousel-3d/dist/carousel-3d.css" rel="stylesheet" type="text/css" />
-<script src="lib/angular-carousel-3d/dist/angular-swipe.js"></script>
-<script src="lib/angular-carousel-3d/dist/carousel-3d.js"></script>
-<!-- controllers-->
-<script src="angularapp/controllers/home.js"></script>
-</head>
-<body>
-<div ui-view></div>
-</body>
-</html>
+}
